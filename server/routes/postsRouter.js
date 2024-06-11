@@ -1,20 +1,9 @@
 import express from "express";
 import PostModel from "../models/postModel.js";
+import { allPosts } from "../controller/postsController.js";
 
 const router = express.Router();
 
-router.get("/all", async (req, res) => {
-  try {
-    const allPosts = await PostModel.find({});
-    console.log("allPosts :>> ", allPosts);
-
-    res.status(200).json({
-      number: allPosts.length,
-      allPosts,
-    });
-  } catch (error) {
-    console.log("error :>> ", error);
-  }
-});
+router.get("/all", allPosts);
 
 export default router;

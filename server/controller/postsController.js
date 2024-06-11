@@ -1,4 +1,4 @@
-import PostModelModel from "../models/postModel";
+import PostModel from "../models/postModel";
 import mongoose from "mongoose";
 
 //read about Model-View-Controller (MVC)! Separation of concerns
@@ -9,6 +9,7 @@ const allPosts = async (req, res) => {
     console.log("allPosts :>> ", allPosts);
 
     res.status(200).json({
+      message: "These are all posts in the back-end",
       number: allPosts.length,
       allPosts,
     });
