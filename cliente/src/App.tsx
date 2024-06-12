@@ -1,11 +1,4 @@
 import { useState } from "react";
-import {
-  createRoutesFromElements,
-  createBrowserRouter,
-  Route,
-  RouterProvider,
-  Outlet,
-} from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -20,7 +13,6 @@ function App() {
     <>
       <div>
         <h1>B.Garden</h1>
-        <RouterProvider router={router} />
       </div>
     </>
   );
