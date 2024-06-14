@@ -14,8 +14,11 @@ import {
 const Router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />}>
+      {/*the following is the homepage */}
       <Route index element={<App />} />
       <Route path="/login" element={<div>Login</div>} />
+      <Route path="/registration" element={<div>Register</div>} />
+      <Route path="/myProfile" element={<div>Profile</div>} />
     </Route>
   )
 );
