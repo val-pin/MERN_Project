@@ -3,6 +3,7 @@ export type PostType = {
   date: Date;
   _id: string;
   picture: string;
+  comment: string;
 };
 
 export type AllPostsResType = {

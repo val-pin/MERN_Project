@@ -1,8 +1,8 @@
+//Model-View-Controller (MVC) architectural pattern
+
 import PostModel from "../models/postModel.js";
-import mongoose from "mongoose";
 
-//read about Model-View-Controller (MVC)! Separation of concerns
-
+//express middleware
 const allPosts = async (req, res) => {
   try {
     const allPosts = await PostModel.find({});
@@ -24,8 +24,20 @@ const allPosts = async (req, res) => {
   }
 };
 
-const getPostById = () => {
+const getPostById = async (req, res) => {
+  console.log("req.params :>> ", req.params);
   // get the id of the post from the url parameters, and do a request to mongoDB using that id
   // Send response to client with the object of that single post
+  const singlePost = await PostModel.findById(req.params.postid).exec();
+  console.log("singlePost :>> ", singlePost);
+  //this is what we respond to the  Client (what arrives inside the response of the Fetch)
+  res.status(200).json({
+    requestedPost: {
+      img: singlePost.picture,
+      likes: singlePost.likes,
+    },
+    message: "this is the post you were asking for",
+    dateOfResponse: new Date(),
+  });
 };
 export { allPosts, getPostById };

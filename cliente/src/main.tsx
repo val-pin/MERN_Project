@@ -10,6 +10,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
+import MyNavbar from "./components/MyNavbar.tsx";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,5 +31,10 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 );
 
 function Root() {
-  return <Outlet />;
+  return (
+    <>
+      <MyNavbar />
+      <Outlet />
+    </>
+  );
 }

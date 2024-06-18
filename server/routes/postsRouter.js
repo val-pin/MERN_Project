@@ -6,5 +6,6 @@ const router = express.Router();
 
 router.get("/all", allPosts);
 router.get("/:postid", getPostById);
+// router.get("/postid", getPostById);
 
 export default router;
