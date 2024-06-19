@@ -33,8 +33,12 @@ const getPostById = async (req, res) => {
   //this is what we respond to the  Client (what arrives inside the response of the Fetch)
   res.status(200).json({
     requestedPost: {
-      img: singlePost.picture,
+      picture: singlePost.picture,
       likes: singlePost.likes,
+      name: singlePost.name,
+      comment: singlePost.comment,
+      date: singlePost.date,
+      id: singlePost._id,
     },
     message: "this is the post you were asking for",
     dateOfResponse: new Date(),

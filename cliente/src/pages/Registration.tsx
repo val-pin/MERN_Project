@@ -30,7 +30,7 @@ function Registration() {
 
   return (
     <Form onSubmit={handleRegisterSubmit}>
-      <h2>Registration</h2>
+      <h2>Welcome! Register here</h2>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
