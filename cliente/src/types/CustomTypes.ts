@@ -7,7 +7,7 @@ export type PostType = {
   likes: number;
 };
 
-export type AllPostsResType = {
+export type AllPostsResponseType = {
   message: string;
   number: number;
   allPosts: PostType[];

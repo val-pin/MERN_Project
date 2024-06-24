@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { PostType, type AllPostsResType } from "./types/CustomTypes";
+import { PostType, type AllPostsResponseType } from "./types/CustomTypes";
 import MyNavbar from "./components/MyNavbar";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ function App() {
     const response = await fetch("http://localhost:5000/api/posts/all");
     // console.log("response :>> ", response);
     if (response.ok) {
-      const result = (await response.json()) as AllPostsResType;
+      const result = (await response.json()) as AllPostsResponseType;
       // console.log("result :>> ", result);
       setPosts(result.allPosts);
     }
