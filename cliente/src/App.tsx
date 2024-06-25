@@ -8,7 +8,6 @@ function App() {
   const [posts, setPosts] = useState<PostType[]>([]);
 
   const fetchServer = async () => {
-    const response = await fetch("http://localhost:5000/api/posts/all");
     // console.log("response :>> ", response);
     if (response.ok) {
       const result = (await response.json()) as AllPostsResponseType;

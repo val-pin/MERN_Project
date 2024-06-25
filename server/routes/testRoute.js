@@ -8,4 +8,10 @@ router.get("/test", (request, response) => {
   });
 });
 
+router.post("/test", (request, response) => {
+  response.send({
+    message: "this is a test POST route",
+  });
+});
+
 export default router;

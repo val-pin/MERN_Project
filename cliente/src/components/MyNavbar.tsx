@@ -12,8 +12,8 @@ function MyNavbar() {
 
   return (
     <nav>
-      <Link to="login">Login</Link> | <Link to="myprofile">My Profile</Link> |
-      <Link to="registration">Registration</Link> |
+      <Link to="login">Login</Link> | <Link to="myprofile">My Profile</Link> |{" "}
+      <Link to="register">Register</Link>
     </nav>
   );
 }

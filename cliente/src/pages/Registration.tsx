@@ -2,13 +2,10 @@ import { ChangeEvent, FormEvent, useContext, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
-// import { AuthContext } from "../context/AuthContext";
 
 // The <FormControl> component renders a form control with Bootstrap styling. The <FormGroup> component wraps a form control with proper spacing, along with support for a label, help text, and validation state. To ensure accessibility, set controlId on <FormGroup>, and use <FormLabel> for the label.
 
 function Registration() {
-  // const { register } = useContext(AuthContext);
-
   const [email, setEmail] = useState("");
 
   const [password, setPassword] = useState("");
@@ -25,12 +22,12 @@ function Registration() {
   const handleRegisterSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("email, password :>> ", email, password);
-    register(email, password);
+    // register(email, password);
   };
 
   return (
     <Form onSubmit={handleRegisterSubmit}>
-      <h2>Welcome! Register here</h2>
+      <h2>Welcome!</h2>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control

@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import MyNavbar from "./components/MyNavbar.tsx";
 import PostDetails from "./pages/PostDetails.tsx";
+import Registration from "./pages/Registration.tsx";
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,7 +20,7 @@ const Router = createBrowserRouter(
       {/*the following is the homepage */}
       <Route index element={<App />} />
       <Route path="/login" element={<div>Login</div>} />
-      <Route path="/registration" element={<div>Register</div>} />
+      <Route path="/register" element={<Registration />} />
       <Route path="/myProfile" element={<div>Profile</div>} />
       <Route path="/:post_id" element={<PostDetails />} />
     </Route>

@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import testRouter from "./routes/testRoute.js";
 import postRouter from "./routes/postsRouter.js";
 import userRouter from "./routes/usersRouter.js";
+
 import "dotenv/config";
 
 const app = express();
@@ -30,6 +31,7 @@ const loadRoutes = () => {
   app.use("/api", testRouter);
   app.use("/api/posts", postRouter);
   app.use("/api/users", userRouter);
+
   app.use("*", (req, res) => {
     res.status(404).json({ error: "no such endpoint found" });
   });
