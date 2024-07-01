@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { PostType, type AllPostsResponseType } from "./types/CustomTypes";
-import MyNavbar from "./components/MyNavbar";
+import { AllPostsResponseType, PostType } from "./types/CustomTypes";
 import { Link } from "react-router-dom";
 
 function App() {
   const [posts, setPosts] = useState<PostType[]>([]);
 
   const fetchServer = async () => {
+    const response = await fetch("http://localhost:5000/api/posts/all");
     // console.log("response :>> ", response);
     if (response.ok) {
       const result = (await response.json()) as AllPostsResponseType;
@@ -26,15 +26,16 @@ function App() {
   useEffect(() => {
     fetchServer();
   }, []);
+
   return (
     <>
       <div>
         <h1>B.Garden</h1>
         {posts?.map((post) => {
           return (
-            <Link to={post._id}>
+            <Link to={post._id} key={post._id}>
               {/* //replace this with PostDetails */}
-              {/* REVIEW include here a component representing the Post, and pass the information it needs to render as props */}
+              {/* REVIEW include here a component representing the Post, and pass the information it needs to */}
               <div key={post._id}>
                 {post.name} | {formatDate(post.date)}
                 <img

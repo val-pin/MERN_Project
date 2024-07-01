@@ -6,6 +6,7 @@ import postRouter from "./routes/postsRouter.js";
 import userRouter from "./routes/usersRouter.js";
 
 import "dotenv/config";
+import cloudinaryConfig from "./config/cloudinaryConfig.js";
 
 const app = express();
 
@@ -13,6 +14,7 @@ const addMiddlewares = () => {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
   app.use(cors());
+  cloudinaryConfig();
 };
 
 const startServer = () => {
