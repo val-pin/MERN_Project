@@ -18,3 +18,10 @@ export type SinglePostResponseType = {
   message: string;
   requestedPost: PostType;
 };
+
+export type User = {
+  name: string;
+  email: string;
+  profilePic: string;
+  posts: PostType[];
+};

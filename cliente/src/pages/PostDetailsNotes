@@ -1,10 +1,16 @@
 //1. create a variable that stores the information using the useParams hook (check docs) https://reactrouter.com/en/main/hooks/use-params
+
 //2. create a fetch function that makes request to backend endpoint containing the variable created before
-//3. check the response from the fetch. if there is a Post coming, then :
-  //3.1 create a state variable (react state variable e.g  const [singlePost, setSinglePost]=useState({})).
-  //state= variable that contains a value that represensts smth that appears on the screen
 
-  //3.2 use the setter function from the state variable to update the value of that variable with the post coming in the response of the fetch request.
-  //useState = react hook that lets me add a state variable to my component
+//3. check the response from the fetch. if there is a Post coming, then:
 
-  //3.3 Render in JSX  the information store in the state variable
+//3.1 create a state variable (react state variable e.g  
+ const [singlePost, setSinglePost]=useState({})).
+
+//state= variable that contains a value that represensts smth that appears on the screen
+
+//3.2 use the setter function from the state variable to update the value of that variable with the post coming in the response of the fetch request.
+
+//useState = react hook that lets me add a state variable to my component
+
+//3.3 Render in JSX the information store in the state variable
